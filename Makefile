@@ -6,7 +6,7 @@
 #    By: ttran <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/29 15:39:27 by ttran             #+#    #+#              #
-#    Updated: 2017/12/07 22:58:49 by ttran            ###   ########.fr        #
+#    Updated: 2017/12/11 13:32:31 by ttran            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,20 +27,19 @@ ft_strnequ.o ft_strjoin.o ft_atoi.o ft_strclr.o ft_strmapi.o \
 ft_isprint.o ft_lstdel.o ft_strchr.o ft_mallocwrd.o ft_countplace.o \
 ft_isprime.o ft_hassqrt.o ft_fibonacci.o ft_recursive_power.o \
 ft_recursive_factorial.o
- 
+
 all: $(NAME)
 
-%.o: %.c
-	$(CC) $(FLAGS) -c -o $@ $<
-$(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+$(NAME): 
+	@$(CC) $(FLAGS) -c $(OBJ:.o=.c)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
 clean:
-	/bin/rm -f *.o
+	@/bin/rm -f $(OBJ)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
 
