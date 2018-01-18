@@ -6,7 +6,7 @@
 #    By: ttran <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/29 15:39:27 by ttran             #+#    #+#              #
-#    Updated: 2017/12/11 13:32:31 by ttran            ###   ########.fr        #
+#    Updated: 2018/01/17 19:49:53 by ttran            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ ft_putchar_fd.o ft_memset.o ft_isalpha.o ft_strcat.o ft_tolower.o \
 ft_strnequ.o ft_strjoin.o ft_atoi.o ft_strclr.o ft_strmapi.o \
 ft_isprint.o ft_lstdel.o ft_strchr.o ft_mallocwrd.o ft_countplace.o \
 ft_isprime.o ft_hassqrt.o ft_fibonacci.o ft_recursive_power.o \
-ft_recursive_factorial.o
+ft_recursive_factorial.o get_next_line.c
 
 all: $(NAME)
 

@@ -6,16 +6,23 @@
 /*   By: ttran <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 15:58:31 by ttran             #+#    #+#             */
-/*   Updated: 2017/12/07 22:57:15 by ttran            ###   ########.fr       */
+/*   Updated: 2018/01/17 19:52:55 by ttran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFF_SIZE 80
+# define FD_LIMIT 9001
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <fcntl.h>
+# include <sys/types.h>
+# include <sys/stat.h>
 
+int					get_next_line(const int fd, char **line);
+int					gtfoline(char **holder, char **line);
 void				ft_putchar(char c);
 void				ft_putstr(char *str);
 void				ft_putnbr(int c);
