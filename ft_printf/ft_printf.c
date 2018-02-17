@@ -60,6 +60,7 @@ int			ft_printf(const char *format, ...)
 
 	set_info(&info);
 	va_start(args, format);
+	setlocale(LC_ALL, "en_US.utf8");
 	while (*format)
 	{
 		if (*format == '%')
