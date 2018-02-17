@@ -13,6 +13,7 @@
 NAME = libft.a
 CFLAG = -Wall -Wextra -Werror
 SRCS_DIR = ./
+PRINT_DIR = ./ft_printf/
 CC = gcc
 FILES = ft_strrchr ft_putstr ft_strcmp ft_strlcat ft_memcpy \
 		ft_strequm ft_memmove ft_strsplit ft_strncpy ft_lstmap \
@@ -28,11 +29,15 @@ FILES = ft_strrchr ft_putstr ft_strcmp ft_strlcat ft_memcpy \
 		ft_isprint ft_lstdel ft_strchr ft_mallocwrd ft_countplace \
 		ft_isprime ft_hassqrt ft_fibonacci ft_recursive_power \
 		ft_recursive_factorial get_next_line
+PFILES = ft_printf bullshit filler flags format_checker length_checkers nflag \
+			max_itoa_bases precision print_char print_decimal print_string \
+			print_invalid_id print_udecimal print_wstring set_size \
+			struct_functions widechar_functions
 
 RM = @/bin/rm -f 
 
-CFILES = $(patsubst %, $(SRCS_DIR)%.c, $(FILES))
-OFILES = $(patsubst %, %.o, $(FILES))
+CFILES = $(patsubst %, $(SRCS_DIR)%.c, $(FILES)) $(patsubst %, $(PRINT_DIR)%.c, $(PFILES)) 
+OFILES = $(patsubst %, %.o, $(FILES)) $(patsubst %, %.o, $(PFILES))
 
 all: $(NAME)
 
@@ -41,7 +46,7 @@ $(NAME): $(OFILES)
 		@ranlib $(NAME)
 
 $(OFILES):
-		@$(CC) $(CFLAGS) -c $(CFILES)
+		@$(CC) $(CFLAGS) -I. -c $(CFILES)
 
 clean:
 		@$(RM) $(OFILES)
