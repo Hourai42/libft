@@ -1,6 +1,6 @@
 # libft
-My testing library for assignments! 
-Beginner coder's library for 42! I hope I'll work hard from this point on...
+My own library!
+Recreation of a ton of useful C functions, with a bunch more added in. 
 
 
 make inside of libft
